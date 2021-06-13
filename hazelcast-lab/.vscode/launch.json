@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SpbootHazelcastApplication",
+            "request": "launch",
+            "mainClass": "lab.hazelcast.embedded.SpbootHazelcastApplication",
+            "projectName": "spboot-hazelcast"
+        }
+    ]
+}

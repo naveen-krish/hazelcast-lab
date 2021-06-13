@@ -1,0 +1,9 @@
+hazelcast:
+  cluster-name: dev
+  management-center:
+    enabled: <strong>true</strong>
+    url: 'http://localhost:8080/'
+  network:
+    join:
+      multicast:
+        enabled: <strong>true</strong>
