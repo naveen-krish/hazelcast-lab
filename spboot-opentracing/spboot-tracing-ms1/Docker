@@ -1,0 +1,11 @@
+FROM openjdk:11-jre
+RUN mkdir -p /app/bin
+COPY ./target/opentelemetry-ms-1.jar /app/bin
+COPY opentelemetry-javaagent-all.jar /app/bin
+java -Dotel.exporter=jaeger \
+         -Dotel.exporter.jaeger.endpoint=jaeger:14250 \
+         -Dotel.exporter.jaeger.service.name=microservice1 \
+         -Dapplication.home=/Users/naveen/Arch-Lab/java_lab/vscode/spboot-opentracing/spboot-tracing-ms1/target/ \
+         -Dapplication.name=microservice1 \
+         -javaagent:/Users/naveen/Arch-Lab/java_lab/vscode/spboot-opentracing/spboot-tracing-ms1/target/opentelemetry-javaagent-all.jar \
+-jar \ /Users/naveen/Arch-Lab/java_lab/vscode/spboot-opentracing/spboot-tracing-ms1/target/opentelemetry-ms-1.jar
